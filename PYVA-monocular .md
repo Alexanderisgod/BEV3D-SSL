@@ -28,8 +28,6 @@
 - CVP 主要是 通过 self supervised的方法 确保 投影的 有效性
 
 - Key =X , Query = $X^{\prime}$, Value = $X^{\prime \prime}$
-  
-   
 
 ##### CVT结构
 
@@ -54,15 +52,3 @@
     ![](/home/yihang/.config/marktext/images/2022-07-26-14-11-06-2022-07-26%2014-10-34%20的屏幕截图.png)
 
 4. CVT中的 Feature Selection 提升效果能达到3%~4%。对$X^{\prime}$ 和$X^{\prime \prime}$进行了 融合。但是 生成Value 的思想可以。
-
-
-
-
-
-
-
-
-
-
-
-
