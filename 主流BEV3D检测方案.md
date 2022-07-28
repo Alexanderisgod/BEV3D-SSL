@@ -130,3 +130,23 @@ BEVDet主要是在lift splat上加上了 检测头
 - 估计的准确吗？？影响大不大？？只能针对 同一scene的物体进行预测吗， 还是多少帧 图像， 能学到自车的运动？
 
 - 或者直接估计自车的速度， 能不能更有效果
+
+---
+
+#### BEVDepth
+
+
+
+![](/home/yihang/.config/marktext/images/2022-07-28-18-10-09-2022-07-28%2018-09-56%20的屏幕截图.png)
+
+| Title      | BEVDet4D: Exploit Temporal Cues in Multi-camera 3D Object Detection                             |
+| ---------- | ----------------------------------------------------------------------------------------------- |
+| Athour     | Yinhao Li, Zheng Ge, Guanyi Yu, Jinrong Yang, Zengran Wang, Yukang Shi, Jianjian Sun, Zeming Li |
+| Paper Link | https://arxiv.org/pdf/2206.10092v1.pdf                                                          |
+| Github     | https://github.com/Megvii-BaseDetection/BEVDepth                                                |
+
+##### 模型结构
+
+针对LSS的方法， BEVDepth直接引入了 depth估计的分支，<mark>显式的增强了的深度估计</mark>的效果， 在NuScenes数据集的3D检测达到了SOTA效果。
+
+可以改进的方向：参照BEVDet4D 可以考虑引入时间约束
