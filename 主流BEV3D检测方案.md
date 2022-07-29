@@ -135,11 +135,9 @@ BEVDet主要是在lift splat上加上了 检测头
 
 #### BEVDepth
 
-
-
 ![](/home/yihang/.config/marktext/images/2022-07-28-18-10-09-2022-07-28%2018-09-56%20的屏幕截图.png)
 
-| Title      | BEVDet4D: Exploit Temporal Cues in Multi-camera 3D Object Detection                             |
+| Title      | BEVDepth: Acquisition of Reliable Depth for<br/>Multi-view 3D Object Detection                  |
 | ---------- | ----------------------------------------------------------------------------------------------- |
 | Athour     | Yinhao Li, Zheng Ge, Guanyi Yu, Jinrong Yang, Zengran Wang, Yukang Shi, Jianjian Sun, Zeming Li |
 | Paper Link | https://arxiv.org/pdf/2206.10092v1.pdf                                                          |
@@ -147,6 +145,22 @@ BEVDet主要是在lift splat上加上了 检测头
 
 ##### 模型结构
 
-针对LSS的方法， BEVDepth直接引入了 depth估计的分支，<mark>显式的增强了的深度估计</mark>的效果， 在NuScenes数据集的3D检测达到了SOTA效果。
+针对LSS的方法， BEVDepth直接引入了 depth估计的分支，<mark>显式的增强了的深度估计</mark>的效果， 在NuScenes数据集的3D检测达到了SOTA效果。同时引入了<mark>点云</mark> 数据来监督深度的学习， <font color=red>NuScenes上显示这是 Camera Only的模型？？</font>
+
+同LSS相比， 取消了 生成伪3D 点云的做法， 而是直接估计 2D特征的 深度
+
+直接将 相机的内参 作为输入的特征， 通过网络学习融合——<mark>新颖</mark>
+
+![](/home/yihang/.config/marktext/images/2022-07-29-09-45-31-2022-07-29%2009-45-15%20的屏幕截图.png)
 
 可以改进的方向：参照BEVDet4D 可以考虑引入时间约束
+
+BEV跨视角预测问题——是一个瓶颈：模型对 <mark>车辆整体 想象能力</mark>不够
+
+- BEVFormer
+
+![](/home/yihang/.config/marktext/images/2022-07-29-14-49-57-2022-07-29%2014-49-45%20的屏幕截图.png)
+
+- BEVDepth
+
+![](/home/yihang/.config/marktext/images/2022-07-29-14-46-08-2022-07-29%2014-45-41%20的屏幕截图.png)
