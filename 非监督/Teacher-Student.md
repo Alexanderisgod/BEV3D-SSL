@@ -16,10 +16,6 @@
 | Temporal Ensembling | 同Π 模型相比， 将$f(x^2)$ 替换为$Ensemble[\sum_{1}^{n}f_{epoch-1}(x^i)]$ ， 使得 $\widetilde z_i$  每个epoch后才更新，大型数据集慢 | ![](https://img2020.cnblogs.com/blog/1351564/202006/1351564-20200609091937752-414637732.png)                                     |
 | Mean Teacher        | 认为Temporal Ensembling 进行EMA效果并不好，相较于前者对预测进行EMA平均，Mean Teacher是一个进行了模型权重平均（EMA）的模型                        | ![](https://img2020.cnblogs.com/blog/1351564/202006/1351564-20200605154033235-1551850018.png)                                    |
 
- 
-
-
-
 ### Π 模型
 
 #### 模型
@@ -27,12 +23,6 @@
 训练过程的每一个 epoch 中，同一个无标签样本前向传播（forward）**两次**，通过 data augmentation 和 dropout 注入扰动（或者说随机性、噪声），同一样本的两次 forward 会得到不同的 predictions，Π-Model 希望这两个 predictions 尽可能一致，即模型对扰动鲁棒。
 
 ![](https://img2020.cnblogs.com/blog/1351564/202006/1351564-20200609091901374-2059403596.png)
-
-
-
-
-
-
 
 ### Temporal Ensembling for Semi-Supervised Learning
 
@@ -51,14 +41,6 @@ Temporal Ensembling 的 ensembling在哪？通过 EMA 来平均之前 epochs 的
 ![](https://img2020.cnblogs.com/blog/1351564/202006/1351564-20200609091937752-414637732.png)
 
 个人理解：类似Memory bank的做法， 但是存储之前的结果 数量可能存在差异
-
-
-
-
-
-
-
-
 
 ### Mean Teacher
 
